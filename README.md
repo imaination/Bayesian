@@ -1,2 +1,3 @@
 # Bayesian
-Simulation Project
+Exploring Simulation Method for Beyesian Study.
+

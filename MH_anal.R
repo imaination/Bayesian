@@ -7,6 +7,7 @@
 # We have three parameters, slopt, intercept, and standard deviation
 # of error. 
 # 
+library(coda)
 
 trueA = 5
 trueB = 0

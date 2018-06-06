@@ -53,15 +53,17 @@ posterior <- function(param){
 
 ## (4) Proposal function and actual simulation
 proposalfunction <- function(param){
+    # Normal distribution with same mean
+    # but different sd 0.1, 0.5, 0.3 correspondingly
     return(rnorm(3,mean = param, sd= c(0.1,0.5,0.3)))
 }
  
 run_metropolis_MCMC <- function(startvalue, iterations){
     chain = array(dim = c(iterations+1,3))
     chain[1,] = startvalue
+    cat("dimention: ", dim(chain), '\n')
     for (i in 1:iterations){
         proposal = proposalfunction(chain[i,])
-         
         probab = exp(posterior(proposal) - posterior(chain[i,]))
         if (runif(1) < probab){
             chain[i+1,] = proposal
@@ -74,30 +76,32 @@ run_metropolis_MCMC <- function(startvalue, iterations){
  
 # initial point
 # we can set multiple initial points and see if they converge
+start_time = Sys.time()
 startvalue = c(4,0,10) 
-chain = run_metropolis_MCMC(startvalue, 20000)
- 
+chain = run_metropolis_MCMC(startvalue, 10000)
+print(Sys.time() - start_time) 
+
 burnIn = 10000
 acceptance = 1-mean(duplicated(chain[-(1:burnIn),]))
 
-
-par(mfrow = c(2,3))
-hist(chain[-(1:burnIn),1],nclass=30, , main="Posterior of a", xlab="True value = red line" )
-abline(v = mean(chain[-(1:burnIn),1]))
-abline(v = trueA, col="red" )
-hist(chain[-(1:burnIn),2],nclass=30, main="Posterior of b", xlab="True value = red line")
-abline(v = mean(chain[-(1:burnIn),2]))
-abline(v = trueB, col="red" )
-hist(chain[-(1:burnIn),3],nclass=30, main="Posterior of sd", xlab="True value = red line")
-abline(v = mean(chain[-(1:burnIn),3]) )
-abline(v = trueSd, col="red" )
-plot(chain[-(1:burnIn),1], type = "l", xlab="True value = red line" , main = "Chain values of a", )
-abline(h = trueA, col="red" )
-plot(chain[-(1:burnIn),2], type = "l", xlab="True value = red line" , main = "Chain values of b", )
-abline(h = trueB, col="red" )
-plot(chain[-(1:burnIn),3], type = "l", xlab="True value = red line" , main = "Chain values of sd", )
-abline(h = trueSd, col="red" )
- 
-# for comparison:
-summary(lm(y~x))
-
+# 
+# par(mfrow = c(2,3))
+# hist(chain[-(1:burnIn),1],nclass=30, , main="Posterior of a", xlab="True value = red line" )
+# abline(v = mean(chain[-(1:burnIn),1]))
+# abline(v = trueA, col="red" )
+# hist(chain[-(1:burnIn),2],nclass=30, main="Posterior of b", xlab="True value = red line")
+# abline(v = mean(chain[-(1:burnIn),2]))
+# abline(v = trueB, col="red" )
+# hist(chain[-(1:burnIn),3],nclass=30, main="Posterior of sd", xlab="True value = red line")
+# abline(v = mean(chain[-(1:burnIn),3]) )
+# abline(v = trueSd, col="red" )
+# plot(chain[-(1:burnIn),1], type = "l", xlab="True value = red line" , main = "Chain values of a", )
+# abline(h = trueA, col="red" )
+# plot(chain[-(1:burnIn),2], type = "l", xlab="True value = red line" , main = "Chain values of b", )
+# abline(h = trueB, col="red" )
+# plot(chain[-(1:burnIn),3], type = "l", xlab="True value = red line" , main = "Chain values of sd", )
+# abline(h = trueSd, col="red" )
+#  
+# # for comparison:
+# summary(lm(y~x))
+# 

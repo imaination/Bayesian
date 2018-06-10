@@ -59,7 +59,7 @@ plot(mcmc(chain))
 correlationPlot(chain)
 
 # check convergence 
-chain2<-run_metropolis_MCMC(c(0.1,0.2,0.7), 100000)
+chain2<-run_metropolis_MCMC(c(0.1,0.2,0.7), 1000, 100,100000)
 combinedchains = mcmc.list(mcmc(chain), mcmc(chain2))
 plot(combinedchains)
 gelman.diag(combinedchains)

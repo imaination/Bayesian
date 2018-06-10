@@ -27,9 +27,9 @@ run_metropolis = function(initial, burn, thin, size) {
   chain[1,1:3] = initial
   for (i in 1:size) {
     proposal = proposalGenerator(chain[i,1:2])
-    logratio = posteriorGenerator(proposal) - posteriorGenerator(chain[i,1:3]) # log
+    logratio = posteriorGenerator(c(proposal, 1-proposal)) - posteriorGenerator(chain[i,1:3]) # log
 	ratio = exp(logratio)
-    if(ratio >= 1 || rbinom(1,1,ratio)) {
+    if(runif < ratio) {
 	  chain[i+1,1:3] = c(proposal, 1-sum(c(proposal,1-proposal)))
 	  chain[i+1,4] = posteriorGenerator(proposal)
 	} else{
@@ -41,3 +41,5 @@ run_metropolis = function(initial, burn, thin, size) {
 }
 
 test=run_metropolis(init, 1000,100,1000000)
+
+

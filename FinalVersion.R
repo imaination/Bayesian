@@ -1,3 +1,5 @@
+library(MASS)
+library(coda)
 library(MCMCpack)
 library(BayesianTools)
 
@@ -82,8 +84,14 @@ cat("metropolis time spent: ", Sys.time() - start, '\n')
 # analysis
 summary(gibbs_chain)
 par(mar=c(2,2,2,2))
+
+jpeg('gibbs_chain.jpg')
 plot(mcmc(gibbs_chain))
+dev.off()
+
+jpeg('metropolis_chain.jpg')
 plot(mcmc(metro_chain))
+dev.off()
 
 # # check partial correlatation btw parameters
 # correlationPlot(chain)
@@ -91,6 +99,14 @@ plot(mcmc(metro_chain))
 # # check convergence
 # chain2<-gibbs(c(sum(x[1,])/140,sum(x[2,])/140),1000,100,1000000)
 combinedchains = mcmc.list(mcmc(gibbs_chain), mcmc(metro_chain))
+jpeg('combinedChains.jpg')
 plot(combinedchains)
+dev.off()
+
+jpeg('diagnostic.jpg')
 gelman.diag(combinedchains)
+dev.off()
+
+jpeg("gelman.jpg")
 gelman.plot(combinedchains)
+dev.off()

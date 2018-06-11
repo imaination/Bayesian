@@ -1,10 +1,9 @@
-library(coda)
 library(MCMCpack)
 library(BayesianTools)
 
 true_theta<-c(0.1,0.7,0.2)
 param<-c(2,2,2)
-x<-rmultinom(20,size=7,prob = true_theta)
+x<-rmultinom(1,size=7,prob = true_theta)   # FIX THIS
 
 gibbs_func<-function(start_value,burnin,thin,iter){
   update<-start_value

@@ -1,9 +1,11 @@
 library(MCMCpack)
 library(BayesianTools)
 
+set.seed(54321)
+
 true_theta<-c(0.1,0.7,0.2)
 param<-c(2,2,2)
-x<-rmultinom(1,size=7,prob = true_theta)   # FIX THIS
+x<-rmultinom(20,size=7,prob = true_theta)   # FIX THIS
 
 gibbs_func<-function(start_value,burnin,thin,iter){
   update<-start_value
@@ -24,20 +26,21 @@ gibbs_func<-function(start_value,burnin,thin,iter){
   return(chain)
   
 }
-
-chain<-gibbs_func(c(sum(x[1,])/140,sum(x[2,])/140),1000,100,100000)
+start = Sys.time()
+gibbs_chain<-gibbs_func(c(sum(x[1,])/140,sum(x[2,])/140),1000,100,100000)
+cat('time spent: ', Sys.time() - start, '\n')
 
 # analysis
 summary(chain)
 par(mar=c(2,2,2,2))
 plot(mcmc(chain))
 
-# check partial correlatation btw parameters
-correlationPlot(chain)
-
-# check convergence 
-chain2<-gibbs(c(sum(x[1,])/140,sum(x[2,])/140),1000,100,1000000)
-combinedchains = mcmc.list(mcmc(chain), mcmc(chain2))
-plot(combinedchains)
-gelman.diag(combinedchains)
-gelman.plot(combinedchains)
+# # check partial correlatation btw parameters
+# correlationPlot(chain)
+# 
+# # check convergence
+# chain2<-gibbs(c(sum(x[1,])/140,sum(x[2,])/140),1000,100,1000000)
+# combinedchains = mcmc.list(mcmc(chain), mcmc(chain2))
+# plot(combinedchains)
+# gelman.diag(combinedchains)
+# gelman.plot(combinedchains)

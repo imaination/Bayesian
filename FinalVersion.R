@@ -3,11 +3,29 @@ library(BayesianTools)
 
 set.seed(54321)
 
-# Data
-true_theta <- c(0.1,0.7,0.2)
-alpha <- c(2,2,2)
-x <- rmultinom(20,size=7,prob = true_theta)    # FIX THIS
-post_alpha <- t(alpha + t(x))
+true_theta<-c(0.1,0.7,0.2)
+param<-c(2,2,2)
+x<-rmultinom(20,size=7,prob = true_theta)   # FIX THIS
+
+gibbs_func<-function(start_value,burnin,thin,iter){
+  update<-start_value
+  theta_mat<-mat.or.vec(2,iter)
+  for(i in 1:iter){
+    theta1<-(1-update[2])*(rbeta(1,shape1 = param[1]+sum(x[1,]),shape2 = param[3]+sum(x[3,])))
+    theta2<-(1-theta1)*(rbeta(1,shape1 = param[2]+sum(x[2,]),shape2 = param[3]+sum(x[3,])))
+    update<-c(theta1,theta2)
+    theta_mat[,i]<-update
+  }
+  sample1<-theta_mat[1,][seq(burnin+1,iter,thin)]
+  sample2<-theta_mat[2,][seq(burnin+1,iter,thin)]
+  
+  chain<-matrix(nrow=length(sample1), ncol=2)
+  chain[,1]<-sample1
+  chain[,2]<-sample2
+  
+  return(chain)
+  
+}
 
 # Posterior
 posterior_func <- function(param){
@@ -51,23 +69,28 @@ run_metropolis_MCMC <- function(start_value, burnin, thin, iter, s = scale_facto
   return(chain) 
 }
 
-start_value = c(sum(x[1,])/140,sum(x[2,])/140, sum(x[3,]/140))
+start_value = apply(x, 1, sum) / 140
+
+start = Sys.time()
+gibbs_chain<-gibbs_func(start_value[1:2],1000,100,100000)
+cat('gibbs time spent: ', Sys.time() - start, '\n')
+
 start = Sys.time()
 metro_chain = run_metropolis_MCMC(start_value, 1000,100,100000)
-cat("time spent: ", Sys.time() - start, '\n')
+cat("metropolis time spent: ", Sys.time() - start, '\n')
+
 # analysis
-summary(metro_chain)
+summary(gibbs_chain)
 par(mar=c(2,2,2,2))
+plot(mcmc(gibbs_chain))
 plot(mcmc(metro_chain))
 
 # # check partial correlatation btw parameters
 # correlationPlot(chain)
 # 
-# # check convergence 
-#chain2<-run_metropolis_MCMC(c(0.1,0.2,0.7), 1000, 100,100000)
-
-# # Checking two chains
-# combinedchains = mcmc.list(mcmc(gibbs_chain), mcmc(metro_chain))
+# # check convergence
+# chain2<-gibbs(c(sum(x[1,])/140,sum(x[2,])/140),1000,100,1000000)
+# combinedchains = mcmc.list(mcmc(chain), mcmc(chain2))
 # plot(combinedchains)
 # gelman.diag(combinedchains)
 # gelman.plot(combinedchains)

@@ -14,7 +14,8 @@
 \usepackage{makecell}
 \usepackage{parskip}
 \usepackage{graphicx}
-\usepackage{listings}
+\usepackage{listings} % code
+\usepackage{hyperref} % hyperlink
 
 
 \begin{document}
@@ -40,6 +41,11 @@ Yunzhe Li: madli@ucdavis.edu \\
 Ruriko Imai: raimai@ucdavis.edu \\
 Yizi Zhang: yizzhang@ucdavis.edu
 \end{center}
+
+\begin{center}
+\href{https://github.com/imaination/Bayesian}{\textbf{GitHub Link}}
+\end{center}
+
 \bigskip
 \bigskip
 \bigskip
@@ -101,45 +107,41 @@ We will explore these issues throughout this simulation process.
 
 % ==================== Algorithm =================================
 
-% \section*{Algorithms}
-% Metropolis algorithm: 
-% \begin{itemize}
-% \item Choose a starting point for $\theta$'s from a starting distribution
-% \item For t = 1, 2, $\dots$
-% 	\begin{itemize}
-% 		\item Sample a proposed $\theta^{\star}$ from a symmetric jumping/proposal distribution at time t. 
-% 		\item Calculate the density ratio: \\
-% 		\begin{equation}
-% 			ratio = \frac{p(\theta^{\star})|y}{\theta^{t-1}|y}
-% 		\end{equation}
-% 		\item   Set:\begin{equation}
-%     				\theta^t=
-%     				\begin{cases}
-%              		\theta^{\star}, & \text{with propability min(ratio, 1)} \\
-%    		 	  		\theta^{t-1}, & \text{otherwise}
-%    		 			\end{cases}
-%   			    \end{equation}
+\section*{Algorithms}
+Metropolis algorithm: 
+\begin{itemize}
+\item Choose a starting point for $\theta$'s from a starting distribution
+\item For t = 1, 2, $\dots$
+	\begin{itemize}
+		\item Sample a proposed $\theta^{\star}$ from a symmetric jumping/proposal distribution at time t. 
+		\item Calculate the density ratio: \\
+		\begin{equation}
+			ratio = \frac{p(\theta^{\star})|y}{\theta^{t-1}|y}
+		\end{equation}
+		\item   Set:\begin{equation}
+    				\theta^t=
+    				\begin{cases}
+             		\theta^{\star}, & \text{with propability min(ratio, 1)} \\
+   		 	  		\theta^{t-1}, & \text{otherwise}
+   		 			\end{cases}
+  			    \end{equation}
 
-% 	\end{itemize}
-% \end{itemize}
-% Gibbs algorithm:
-% \begin{itemize}
-% 	\item Set initial values for $\theta$'s
-% 	\item Set $Y = \frac{\theta_{1}}{1-\theta_{2}}|\theta_{2}$\\
-% 	\ \ \ $Y \sim Beta(\alpha_{1}+\sum{X_{1i}}, \ \alpha_{2}+\sum{X_{2i}} + \alpha_{3}+\sum{X_{3i}})$
-% 	\item Set $Z = \frac{\theta_{2}}{1-\theta_{1}}|\theta_{1}$\\
-% 	\ \ \ $Z \sim Beta(\alpha_{2}+\sum{X_{2i}}, \ \alpha_{1}+\sum{X_{1i}} + \alpha_{3}+\sum{X_{3i}})$
-% 	\item Obtain updated sample of $\theta$'s
-% 	\item Simulate steps 1-4 with burn-in and thinning
-% \end{itemize}
+	\end{itemize}
+\end{itemize}
+Gibbs algorithm:
+\begin{itemize}
+	\item Set initial values for $\theta$'s
+	\item Set $Y = \frac{\theta_{1}}{1-\theta_{2}}|\theta_{2}$\\
+	\ \ \ $Y \sim Beta(\alpha_{1}+\sum{X_{1i}}, \ \alpha_{2}+\sum{X_{2i}} + \alpha_{3}+\sum{X_{3i}})$
+	\item Set $Z = \frac{\theta_{2}}{1-\theta_{1}}|\theta_{1}$\\
+	\ \ \ $Z \sim Beta(\alpha_{2}+\sum{X_{2i}}, \ \alpha_{1}+\sum{X_{1i}} + \alpha_{3}+\sum{X_{3i}})$
+	\item Obtain updated sample of $\theta$'s
+	\item Simulate steps 1-4 with burn-in and thinning
+\end{itemize}
 
+% =================== Statistics ===========================
 
-% =================== Analysis =============================
-
-\newpage
-
-
-\section*{Analysis}
+\section*{Statistics}
 
 \begin{center}
 Metropolis Simulation Data: \\ 
@@ -165,19 +167,26 @@ Gibbs Simulation Data: \\
   \end{tabular}
 \end{center}
 
-Interpretation:
-As indicated in the above graphs, comparison of different burn-in and thinning amounts was made to get an idea of what a good burn-in and thinning values are. The simple intuition behind burn-in is to throw out the first few states of the Markov chain to access a more representative part of the sampling distribution. The idea behind thinning is by taking every indicated number, so if thinning=100, taking every 100th sample will allow the samples to be somewhat independent. This is needed since Markov chain has autocorrelation, meaning that the current state depends on the previous state. \\
 
-Figure 2 and Figure 3 represent the sampled values by the Metropolis and Gibbs sampling methods. The true thetas for the posterior distribution are 0.1, 0.7, and 0.2. For the Metropolis sampling method, the sample means are (0.1459, 0.6710), (0.14609, 0.6720), (0.14684, 0.6713), and (0.14818, 0.6695) for their respective burn-in and thinning values. Gibbs sampling means for the $\theta$'s are (0.15194, 0.6636), (0.15075, 0.6643), (0.15087, 0.6642), (0.15556, 0.6563) for their respective burn-in and thinning values. Both algorithms perform with approximately the same accuracy, however, the Gibbs sampler runs faster (approximately 3 seconds) than the Metropolis sampler (approximately 50 seconds). This is because the gibbs function was written in a way that does not call on multiple functions whereas the Metropolis function calls on proposal and posterior functions and so on. Gibbs also breaks the curse of dimensionality by dealing with the conditional distributions of only 2 parameters and updates parameters based on the previous parameters (the acceptance ratio is taken as 1). Whereas the metropolis algorithm has to set up 3 parameters and calculate an acceptance ratio to reject or accept the proposed parameter values. \\
+% =================== Analysis =============================
 
-The partial correlation plots indicate that there is a negative correlation of around -0.50 between the $\theta_{1}$ and $\theta_{2}$. This is because the likelihood function is a multinomial distribution which presumes correlation between parameters. \\
+\newpage
 
-The convergence diagnostic plots check if the sample distributions from the Metropolis and  Gibbs sampler did a sufficient job of representing the posterior distribution. Here, we used a method called the Gelman-Rubin diagnostic to measure this sufficiency. The scale reduction parameters for each parameter are all a factor of 1 indicating  an equal variance for between and within chain variances. These plot shows the chain steps over time and the Metropolis sampler seems to show better and stable convergence for the parameters
+
+\section*{Analysis}
+As indicated in the above graphs, comparison of different burn-in and thinning amounts was made for each MCMC algorithm to access whether burn-in and thinning play a significant role in decreasing dependence on starting values and autocorrelation due to Markov Chain. \\ 
+
+Figure 1 and Figure 2 represent the sampled values by the Metropolis and Gibbs sampling methods and the distribution of the estimated parameters. The true parameters for the target/posterior distribution are set up to be 0.1, 0.7, and 0.2. We then set up 3 control groups for each sampling method, as indicated in the above table, to compare the effects of burn-in and thinning. In this case, we didn’t observe a significant difference in the sampled means of posterior parameters between the 3 control groups, indicating that the burn-in and thinning amount matters less when a large number of iterations is run(N=100000). In addition, both algorithms perform with approximately the same accuracy, however, Gibbs sampler runs faster (less than 1 second) than the Metropolis sampler (approximately 39 seconds). This is because the gibbs function was written in a way that does not call on multiple functions whereas the Metropolis function calls on proposal and posterior functions and so on. The main reason for the difference in computing speed is that Gibbs sampling method breaks the curse of dimensionality by dealing with the conditional distributions of only 2 parameters and updates parameters based on the previous ones without utilizing the rejection sampling scheme(the acceptance ratio is taken as 1). On the contrary, Metropolis algorithm has to compute with all 3 parameters and calculate an acceptance ratio to reject or accept the proposed parameter values. \\
+
+The partial correlation plots in Figure 3 indicate that there is a negative correlation of around -0.50 between the sampled theta1 and theta2. This is due to the fact that the likelihood function is a multinomial distribution which presumes correlation between parameters. 
+
+
 
 % =================== Conclusion =================================
 
 \section*{Conclusion}
-Although these algorithms have dependence on starting values, the values will eventually converge. Having good starting values is better because the algorithm will converge faster but it is not necessary. We are not able to observe significant differences by different values of burn-in good burn-in amount as indicated on other sources and textbooks are around 1000. Also, a good thinning amount to rid of the autocorrelation due to Markov Chain is around 100 since there are not much data left when thinning more than that but too much and possibly leftover correlation if less than that amount. In a situation where conditional densities are accessible, gibbs are preferable over metropolis since it is easier to implement and fast to sample. Otherwise, metropolis performs better. A symmetric distribution is a good proposal distribution since they are always easier to calculate and the algorithm performs faster. 
+Although these algorithms have dependence on starting values, the values will eventually converge. Having good starting values is better because the algorithm will converge faster but it is not necessary. We are not able to observe significant differences in the sampled posterior means of the parameters between different burn-in and thinning amount. This indicates that a large sample size will help significantly to decrease the dependence and autocorrelation issues. In a situation where conditional densities are accessible, Gibbs sampling method is preferable over Metropolis sampling method since it is easier to implement and faster to compute. Otherwise, Metropolis performs better when dealing with more complex target distributions. 
+	
 
 % =================== Difficulties ================================
 
@@ -307,5 +316,30 @@ plot(combinedchains)
 gelman.diag(combinedchains)
 gelman.plot(combinedchains)
 \end{lstlisting}
+
+\begin{thebibliography}{9}
+\bibitem{einstein} 
+\href{https://theoreticalecology.wordpress.com/2010/09/17/metropolis-hastings-mcmc-in-r/}{\textbf{https://theoreticalecology.wordpress.com/2010/09/17/metropolis-hastings-mcmc-in-r/}}
+
+
+\bibitem{einstein} 
+\href{https://theoreticalecology.wordpress.com/2011/12/09/mcmc-chain-analysis-and-convergence-diagnostics-with-coda-in-r/}{\textbf{https://theoreticalecology.wordpress.com/2011/12/09/mcmc-chain-analysis-and-convergence-diagnostics-with-coda-in-r/}}
+
+ 
+\bibitem{einstein} 
+\href{https://stats.stackexchange.com/questions/185631/what-is-the-difference-between-metropolis-hastings-gibbs-importance-and-rejec/185643\#185643}{\textbf{https://stats.stackexchange.com/questions/185631/what-is-the-difference-between-metropolis-hastings-gibbs-importance-and-rejec/185643\#185643}}
+
+
+\bibitem{einstein}
+Sneha’s discussion 9
+
+\end{thebibliography}
+
+
+
+
+
+
+
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 JUN 2018 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 JUN 2018 23:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -621,6 +621,9 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
 LaTeX Warning: Label `fig:birds' multiply defined.
 
+
+LaTeX Warning: Label `fig:birds' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -790,55 +793,84 @@ Overfull \hbox (17.02809pt too wide) in paragraph at lines 141--142
 [][] 
  []
 
+<images/metro_5000_100.jpg, id=21, 481.8pt x 481.8pt>
+File: images/metro_5000_100.jpg Graphic file (type jpg)
 
-LaTeX Warning: File `images/gibbs_100 | 0.jpg' not found on input line 147.
+<use images/metro_5000_100.jpg>
+Package pdftex.def Info: images/metro_5000_100.jpg used on input line 147.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
 
-<images/gibbs_100 | 0.jpg, id=21, 481.8pt x 481.8pt>
-File: images/gibbs_100 | 0.jpg Graphic file (type jpg)
+<images/metropolis_5000_0.jpg, id=22, 481.8pt x 481.8pt>
+File: images/metropolis_5000_0.jpg Graphic file (type jpg)
 
-<use images/gibbs_100 | 0.jpg>
-Package pdftex.def Info: images/gibbs_100 | 0.jpg used on input line 147.
-(pdftex.def)             Requested size: 385.4405pt x 385.4405pt.
+<use images/metropolis_5000_0.jpg>
+Package pdftex.def Info: images/metropolis_5000_0.jpg used on input line 148.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
 
+<images/metropolis_0_100.jpg, id=23, 481.8pt x 481.8pt>
+File: images/metropolis_0_100.jpg Graphic file (type jpg)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<use images/metropolis_0_100.jpg>
+Package pdftex.def Info: images/metropolis_0_100.jpg used on input line 149.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
 
+<images/gibbs_100_0.jpg, id=24, 481.8pt x 481.8pt>
+File: images/gibbs_100_0.jpg Graphic file (type jpg)
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--158
+<use images/gibbs_100_0.jpg>
+Package pdftex.def Info: images/gibbs_100_0.jpg used on input line 155.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/gibbs_5000_0.jpg, id=25, 481.8pt x 481.8pt>
+File: images/gibbs_5000_0.jpg Graphic file (type jpg)
+
+<use images/gibbs_5000_0.jpg>
+Package pdftex.def Info: images/gibbs_5000_0.jpg used on input line 156.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/gibbs_5000_100.jpg, id=26, 481.8pt x 481.8pt>
+File: images/gibbs_5000_100.jpg Graphic file (type jpg)
+
+<use images/gibbs_5000_100.jpg>
+Package pdftex.def Info: images/gibbs_5000_100.jpg used on input line 157.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+ [3 <./images/correlation.png> <./images/metro_5000_100.jpg> <./images/metropol
+is_5000_0.jpg> <./images/metropolis_0_100.jpg> <./images/gibbs_100_0.jpg> <./im
+ages/gibbs_5000_0.jpg> <./images/gibbs_5000_100.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-[3 <./images/correlation.png>] [4 <./images/gibbs_100 | 0.jpg>] [5]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 188.
+[4] [5]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 200.
 
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 188.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 200.
 
-Overfull \hbox (105.4368pt too wide) in paragraph at lines 196--197
+Overfull \hbox (105.4368pt too wide) in paragraph at lines 208--209
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (85.7266pt too wide) in paragraph at lines 197--198
+Overfull \hbox (85.7266pt too wide) in paragraph at lines 209--210
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (33.16605pt too wide) in paragraph at lines 230--231
+Overfull \hbox (33.16605pt too wide) in paragraph at lines 242--243
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -848,10 +880,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6502 strings out of 492995
- 87493 string characters out of 6132704
+ 6528 strings out of 492995
+ 88191 string characters out of 6132704
  194085 words of memory out of 5000000
- 9900 multiletter control sequences out of 15000+600000
+ 9920 multiletter control sequences out of 15000+600000
  10607 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,11n,43p,1238b,1599s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -863,10 +895,10 @@ usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
 r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
 local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
 al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (7 pages, 231739 bytes).
+Output written on main.pdf (7 pages, 481965 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
+ 71 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

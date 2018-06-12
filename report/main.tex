@@ -144,19 +144,31 @@ We will explore these issues throughout this simulation process.
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[scale=0.8]{images/gibbs_100 | 0.jpg}
-  \caption{Partial Correlations}
+  \includegraphics[scale=0.33]{images/metro_5000_100.jpg}
+  \includegraphics[scale=0.33]{images/metropolis_5000_0.jpg}
+  \includegraphics[scale=0.33]{images/metropolis_0_100.jpg}
+  \caption{Metropolis Chain Values and Density of Parameters}
+  \label{fig:birds}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[scale=0.33]{images/gibbs_100_0.jpg}
+  \includegraphics[scale=0.33]{images/gibbs_5000_0.jpg}
+  \includegraphics[scale=0.33]{images/gibbs_5000_100.jpg}
+  \caption{Gibbs Chain Values and Density of Parameters}
   \label{fig:birds}
 \end{figure}
 
 
 % =================== Interpretation =============================
 
+\newpage
+
 \section*{Interpretation}
 Interpretation:
 As indicated in the above graphs, comparison of different burn-in and thinning amounts was made to get an idea of what a good burn-in and thinning values are. The simple intuition behind burn-in is to throw out the first few states of the Markov chain to access a more representative part of the sampling distribution. The idea behind thinning is by taking every indicated number, so if thinning=100, taking every 100th sample will allow the samples to be somewhat independent. This is needed since Markov chain has autocorrelation, meaning that the current state depends on the previous state. \\
 
-Graph 1 represents the sampled values by the Metropolis and Gibbs sampling methods. The true thetas for the posterior distribution are 0.1, 0.7, and 0.2. For the Metropolis sampling method, the sample means are (0.1459, 0.6710), (0.14609, 0.6720), (0.14684, 0.6713), and (0.14818, 0.6695) for their respective burn-in and thinning values. Gibbs sampling means for the $\theta$'s are (0.15194, 0.6636), (0.15075, 0.6643), (0.15087, 0.6642), (0.15556, 0.6563) for their respective burn-in and thinning values. Both algorithms perform with approximately the same accuracy, however, the Gibbs sampler runs faster (approximately 3 seconds) than the Metropolis sampler (approximately 50 seconds). This is because the gibbs function was written in a way that does not call on multiple functions whereas the Metropolis function calls on proposal and posterior functions and so on. Gibbs also breaks the curse of dimensionality by dealing with the conditional distributions of only 2 parameters and updates parameters based on the previous parameters (the acceptance ratio is taken as 1). Whereas the metropolis algorithm has to set up 3 parameters and calculate an acceptance ratio to reject or accept the proposed parameter values. \\
+Figure 2 and Figure 3 represent the sampled values by the Metropolis and Gibbs sampling methods. The true thetas for the posterior distribution are 0.1, 0.7, and 0.2. For the Metropolis sampling method, the sample means are (0.1459, 0.6710), (0.14609, 0.6720), (0.14684, 0.6713), and (0.14818, 0.6695) for their respective burn-in and thinning values. Gibbs sampling means for the $\theta$'s are (0.15194, 0.6636), (0.15075, 0.6643), (0.15087, 0.6642), (0.15556, 0.6563) for their respective burn-in and thinning values. Both algorithms perform with approximately the same accuracy, however, the Gibbs sampler runs faster (approximately 3 seconds) than the Metropolis sampler (approximately 50 seconds). This is because the gibbs function was written in a way that does not call on multiple functions whereas the Metropolis function calls on proposal and posterior functions and so on. Gibbs also breaks the curse of dimensionality by dealing with the conditional distributions of only 2 parameters and updates parameters based on the previous parameters (the acceptance ratio is taken as 1). Whereas the metropolis algorithm has to set up 3 parameters and calculate an acceptance ratio to reject or accept the proposed parameter values. \\
 
 The partial correlation plots indicate that there is a negative correlation of around -0.50 between the $\theta_{1}$ and $\theta_{2}$. This is because the likelihood function is a multinomial distribution which presumes correlation between parameters. \\
 

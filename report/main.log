@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 JUN 2018 21:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 JUN 2018 23:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -617,7 +617,14 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `fig:birds' multiply defined.
+
+
+LaTeX Warning: Label `fig:birds' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -754,55 +761,144 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./images/cover.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 76.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
-LaTeX Font Info:    Try loading font information for U+msa on input line 86.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
+LaTeX Font Info:    Try loading font information for U+msa on input line 91.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 86.
+LaTeX Font Info:    Try loading font information for U+msb on input line 91.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 86.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 91.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [2]
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+<images/correlation.png, id=19, 661.47125pt x 292.09125pt>
+File: images/correlation.png Graphic file (type png)
+
+<use images/correlation.png>
+Package pdftex.def Info: images/correlation.png used on input line 141.
+(pdftex.def)             Requested size: 529.17772pt x 233.6733pt.
+
+Overfull \hbox (17.02809pt too wide) in paragraph at lines 141--142
+[][] 
+ []
+
+<images/metro_5000_100.jpg, id=21, 481.8pt x 481.8pt>
+File: images/metro_5000_100.jpg Graphic file (type jpg)
+
+<use images/metro_5000_100.jpg>
+Package pdftex.def Info: images/metro_5000_100.jpg used on input line 147.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/metropolis_5000_0.jpg, id=22, 481.8pt x 481.8pt>
+File: images/metropolis_5000_0.jpg Graphic file (type jpg)
+
+<use images/metropolis_5000_0.jpg>
+Package pdftex.def Info: images/metropolis_5000_0.jpg used on input line 148.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/metropolis_0_100.jpg, id=23, 481.8pt x 481.8pt>
+File: images/metropolis_0_100.jpg Graphic file (type jpg)
+
+<use images/metropolis_0_100.jpg>
+Package pdftex.def Info: images/metropolis_0_100.jpg used on input line 149.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/gibbs_100_0.jpg, id=24, 481.8pt x 481.8pt>
+File: images/gibbs_100_0.jpg Graphic file (type jpg)
+
+<use images/gibbs_100_0.jpg>
+Package pdftex.def Info: images/gibbs_100_0.jpg used on input line 155.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/gibbs_5000_0.jpg, id=25, 481.8pt x 481.8pt>
+File: images/gibbs_5000_0.jpg Graphic file (type jpg)
+
+<use images/gibbs_5000_0.jpg>
+Package pdftex.def Info: images/gibbs_5000_0.jpg used on input line 156.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/gibbs_5000_100.jpg, id=26, 481.8pt x 481.8pt>
+File: images/gibbs_5000_100.jpg Graphic file (type jpg)
+
+<use images/gibbs_5000_100.jpg>
+Package pdftex.def Info: images/gibbs_5000_100.jpg used on input line 157.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+ [3 <./images/correlation.png> <./images/metro_5000_100.jpg> <./images/metropol
+is_5000_0.jpg> <./images/metropolis_0_100.jpg> <./images/gibbs_100_0.jpg> <./im
+ages/gibbs_5000_0.jpg> <./images/gibbs_5000_100.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
-[3] (./main.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+
+ []
+
+[4] [5]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 200.
+
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 200.
+
+Overfull \hbox (105.4368pt too wide) in paragraph at lines 208--209
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.7266pt too wide) in paragraph at lines 209--210
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (33.16605pt too wide) in paragraph at lines 242--243
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[6] [7] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6212 strings out of 492995
- 84918 string characters out of 6132704
- 166038 words of memory out of 5000000
- 9615 multiletter control sequences out of 15000+600000
+ 6528 strings out of 492995
+ 88191 string characters out of 6132704
+ 194085 words of memory out of 5000000
+ 9920 multiletter control sequences out of 15000+600000
  10607 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,10n,43p,803b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
-pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
->
-Output written on main.pdf (3 pages, 109773 bytes).
+ 40i,11n,43p,1238b,1599s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (7 pages, 481965 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

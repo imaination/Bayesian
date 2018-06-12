@@ -32,7 +32,7 @@
 \vspace*{\fill}
 \begin{center}
 \subsection*{ 
-\huge Comparing Metropolis and Gibbs Sampling Method
+\huge Comparing Metropolis and Gibbs Sampling Methods
 }
 \end{center}
 
@@ -69,7 +69,8 @@ Yizi Zhang: yizzhang@ucdavis.edu
 % =================== Introduction =============================
 
 \section*{Introduction}
-The purpose of this project is to explore sampling methods derived from algorithms in the Monte Carlo Markov Chain (MCMC) family called the Metropolis sampling and Gibbs sampling methods. These MCMC algorithms are used in a bayesian setting where direct sampling from the posterior distribution is difficult. By sampling from the posterior we will be able to estimate mean and other parameters to further analyze the data. In order to check for performance, speed and accuracy of those sampling methods, we shall use a known posterior distribution so the distribution obtained from Metropolis and Gibbs sampling methods can be compared. Therefore, the  setting of the sampling distribution is Multinomial - Dirichlet conjugate with K = 3 categories with two-dimensional parameters to update. 
+The purpose of this project is to explore sampling methods derived from algorithms in the Monte Carlo Markov Chain (MCMC) family called the Metropolis sampling and Gibbs sampling methods. These MCMC algorithms are used in a bayesian setting where direct sampling from the posterior distribution is difficult. By being able to sample from complicated distributions we are able to estimate mean and other parameters to further analyze the data. In order to check for performance (speed and accuracy)of those sampling methods, we shall use a known posterior distribution so the distribution obtained from Metropolis and Gibbs sampling methods can be compared. Therefore, the setting of the sampling distribution is Multinomial - Dirichlet conjugate with K = 3 categories (three-dimensional parameters) to update. 
+
 
 % =================== Difference ===============================
 
@@ -174,12 +175,11 @@ Gibbs Simulation Data: \\
 
 
 \section*{Analysis}
-As indicated in the above graphs, comparison of different burn-in and thinning amounts was made for each MCMC algorithm to access whether burn-in and thinning play a significant role in decreasing dependence on starting values and autocorrelation due to Markov Chain. \\ 
+As indicated in the above graphs, comparison of different burn-in and thinning amounts were made for each MCMC algorithm to access whether burn-in and thinning play a significant role in decreasing dependence on starting values and autocorrelation due to Markov Chain. \\
 
-Figure 1 and Figure 2 represent the sampled values by the Metropolis and Gibbs sampling methods and the distribution of the estimated parameters. The true parameters for the target/posterior distribution are set up to be 0.1, 0.7, and 0.2. We then set up 3 control groups for each sampling method, as indicated in the above table, to compare the effects of burn-in and thinning. In this case, we didn’t observe a significant difference in the sampled means of posterior parameters between the 3 control groups, indicating that the burn-in and thinning amount matters less when a large number of iterations is run(N=100000). In addition, both algorithms perform with approximately the same accuracy, however, Gibbs sampler runs faster (less than 1 second) than the Metropolis sampler (approximately 39 seconds). This is because the gibbs function was written in a way that does not call on multiple functions whereas the Metropolis function calls on proposal and posterior functions and so on. The main reason for the difference in computing speed is that Gibbs sampling method breaks the curse of dimensionality by dealing with the conditional distributions of only 2 parameters and updates parameters based on the previous ones without utilizing the rejection sampling scheme(the acceptance ratio is taken as 1). On the contrary, Metropolis algorithm has to compute with all 3 parameters and calculate an acceptance ratio to reject or accept the proposed parameter values. \\
+ Figure 1 and Figure 2 represent the sampled values by the Metropolis and Gibbs sampling methods and the distribution of the estimated parameters. The true parameters for the target/posterior distribution are set up to be 0.1, 0.7, and 0.2. We then set up 3 control groups for each sampling method, as indicated in the above table, to compare the effects of burn-in and thinning. In this case, we didn’t observe a significant difference in the sampled means of posterior parameters between the 3 control groups, indicating that the burn-in and thinning amount matters less when a large number of iterations is run(N=100000). In addition, both algorithms perform with approximately the same accuracy, however, Gibbs sampler runs faster (less than 1 second) than the Metropolis sampler (approximately 39 seconds). This is because the gibbs function was written in a way that does not call on multiple functions whereas the Metropolis function calls on proposal and posterior functions and so on. The main reason for the difference in computing speed is that Gibbs sampling method breaks the curse of dimensionality by dealing with the conditional distributions of only 2 parameters and updates parameters based on the previous ones without utilizing the rejection sampling scheme(the acceptance ratio is taken as 1). On the contrary, Metropolis algorithm has to compute with all 3 parameters and calculate an acceptance ratio to reject or accept the proposed parameter values. \\
 
 The partial correlation plots in Figure 3 indicate that there is a negative correlation of around -0.50 between the sampled theta1 and theta2. This is due to the fact that the likelihood function is a multinomial distribution which presumes correlation between parameters. 
-
 
 
 % =================== Conclusion =================================

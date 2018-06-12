@@ -86,7 +86,46 @@ We will explore these issues throughout this simulation process.
 		\item True parameters: $\theta_{1} = 0.1$, $\theta_{2} = 0.7$, $\theta_{3} = 0.2$
 		\item Hyperparameters: $\alpha_{1} = 2$, $\alpha_{2} = 2$, $\alpha_{3} = 2$ 
 	\end{itemize}
-	\item Prior: $X_{i} | \theta \overset{H_0}{\sim} Multinom(n, \theta_{1}, \theta_{2}, \theta_{3}); i = 1, \dots, n$
+	\item Prior: $X_{i} | \theta \overset{iid}{\sim} Multinom(n, \theta_{1}, \theta_{2}, \theta_{3}); i = 1, \dots, n$
+	\item Likelihood function: (singular) $Multinom(\theta_{1},\theta_{2},\theta_{3})$.
+	\item Proposal: $Dirichlet(\alpha_{1}, \alpha_{2}, \alpha_{3})$
+	\item Posterior: $Dirichlet(\alpha_{1}+\sum{X_{1i}}, \ \alpha_{2}+\sum{X_{2i}} + \alpha_{3}+\sum{X_{3i}})$
 \end{itemize}
+
+\newpage
+
+\section*{Algorithms}
+Metropolis algorithm: 
+\begin{itemize}
+\item Choose a starting point for $\theta$'s from a starting distribution
+\item For t = 1, 2, $\dots$
+	\begin{itemize}
+		\item Sample a proposed $\theta^{\star}$ from a symmetric jumping/proposal distribution at time t. 
+		\item Calculate the density ratio: \\
+		\begin{equation}
+			ratio = \frac{p(\theta^{\star})|y}{\theta^{t-1}|y}
+		\end{equation}
+		\item   Set:\begin{equation}
+    				\theta^t=
+    				\begin{cases}
+             		\theta^{\star}, & \text{with propability min(ratio, 1)} \\
+   		 	  		\theta^{t-1}, & \text{otherwise}
+   		 			\end{cases}
+  			    \end{equation}
+
+	\end{itemize}
+\end{itemize}
+Gibbs algorithm:
+\begin{itemize}
+	\item Set initial values for $\theta$'s
+	\item Set $Y = \frac{\theta_{1}}{1-\theta_{2}}|\theta_{2}$\\
+	\ \ \ $Y \sim Beta(\alpha_{1}+\sum{X_{1i}}, \ \alpha_{2}+\sum{X_{2i}} + \alpha_{3}+\sum{X_{3i}})$
+	\item Set $Z = \frac{\theta_{2}}{1-\theta_{1}}|\theta_{1}$\\
+	\ \ \ $Z \sim Beta(\alpha_{2}+\sum{X_{2i}}, \ \alpha_{1}+\sum{X_{1i}} + \alpha_{3}+\sum{X_{3i}})$
+	\item Obtain updated sample of $\theta$'s
+	\item Simulate steps 1-4 with burning and thinning
+\end{itemize}
+
+
 
 \end{document}

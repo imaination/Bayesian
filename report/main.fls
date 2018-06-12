@@ -167,9 +167,6 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/jknapltx/ursfs.fd
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
-INPUT images/correlation.png
-INPUT ./images/correlation.png
-INPUT ./images/correlation.png
 INPUT images/metro_5000_100.jpg
 INPUT ./images/metro_5000_100.jpg
 INPUT ./images/metro_5000_100.jpg
@@ -188,6 +185,9 @@ INPUT ./images/gibbs_5000_0.jpg
 INPUT images/gibbs_5000_100.jpg
 INPUT ./images/gibbs_5000_100.jpg
 INPUT ./images/gibbs_5000_100.jpg
+INPUT images/correlation.png
+INPUT ./images/correlation.png
+INPUT ./images/correlation.png
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
 INPUT main.aux

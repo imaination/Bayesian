@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 JUN 2018 23:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 JUN 2018 23:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -617,14 +617,7 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(./main.aux
-
-LaTeX Warning: Label `fig:birds' multiply defined.
-
-
-LaTeX Warning: Label `fig:birds' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -782,61 +775,6 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 91.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [2]
-<images/correlation.png, id=19, 661.47125pt x 292.09125pt>
-File: images/correlation.png Graphic file (type png)
-
-<use images/correlation.png>
-Package pdftex.def Info: images/correlation.png used on input line 141.
-(pdftex.def)             Requested size: 529.17772pt x 233.6733pt.
-
-Overfull \hbox (17.02809pt too wide) in paragraph at lines 141--142
-[][] 
- []
-
-<images/metro_5000_100.jpg, id=21, 481.8pt x 481.8pt>
-File: images/metro_5000_100.jpg Graphic file (type jpg)
-
-<use images/metro_5000_100.jpg>
-Package pdftex.def Info: images/metro_5000_100.jpg used on input line 147.
-(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
-
-<images/metropolis_5000_0.jpg, id=22, 481.8pt x 481.8pt>
-File: images/metropolis_5000_0.jpg Graphic file (type jpg)
-
-<use images/metropolis_5000_0.jpg>
-Package pdftex.def Info: images/metropolis_5000_0.jpg used on input line 148.
-(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
-
-<images/metropolis_0_100.jpg, id=23, 481.8pt x 481.8pt>
-File: images/metropolis_0_100.jpg Graphic file (type jpg)
-
-<use images/metropolis_0_100.jpg>
-Package pdftex.def Info: images/metropolis_0_100.jpg used on input line 149.
-(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
-
-<images/gibbs_100_0.jpg, id=24, 481.8pt x 481.8pt>
-File: images/gibbs_100_0.jpg Graphic file (type jpg)
-
-<use images/gibbs_100_0.jpg>
-Package pdftex.def Info: images/gibbs_100_0.jpg used on input line 155.
-(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
-
-<images/gibbs_5000_0.jpg, id=25, 481.8pt x 481.8pt>
-File: images/gibbs_5000_0.jpg Graphic file (type jpg)
-
-<use images/gibbs_5000_0.jpg>
-Package pdftex.def Info: images/gibbs_5000_0.jpg used on input line 156.
-(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
-
-<images/gibbs_5000_100.jpg, id=26, 481.8pt x 481.8pt>
-File: images/gibbs_5000_100.jpg Graphic file (type jpg)
-
-<use images/gibbs_5000_100.jpg>
-Package pdftex.def Info: images/gibbs_5000_100.jpg used on input line 157.
-(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
- [3 <./images/correlation.png> <./images/metro_5000_100.jpg> <./images/metropol
-is_5000_0.jpg> <./images/metropolis_0_100.jpg> <./images/gibbs_100_0.jpg> <./im
-ages/gibbs_5000_0.jpg> <./images/gibbs_5000_100.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
@@ -851,51 +789,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-[4] [5]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 200.
+[3] [4] <images/metro_5000_100.jpg, id=25, 481.8pt x 481.8pt>
+File: images/metro_5000_100.jpg Graphic file (type jpg)
 
- (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
+<use images/metro_5000_100.jpg>
+Package pdftex.def Info: images/metro_5000_100.jpg used on input line 196.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/metropolis_5000_0.jpg, id=26, 481.8pt x 481.8pt>
+File: images/metropolis_5000_0.jpg Graphic file (type jpg)
+
+<use images/metropolis_5000_0.jpg>
+Package pdftex.def Info: images/metropolis_5000_0.jpg used on input line 197.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/metropolis_0_100.jpg, id=27, 481.8pt x 481.8pt>
+File: images/metropolis_0_100.jpg Graphic file (type jpg)
+
+<use images/metropolis_0_100.jpg>
+Package pdftex.def Info: images/metropolis_0_100.jpg used on input line 198.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/gibbs_100_0.jpg, id=28, 481.8pt x 481.8pt>
+File: images/gibbs_100_0.jpg Graphic file (type jpg)
+
+<use images/gibbs_100_0.jpg>
+Package pdftex.def Info: images/gibbs_100_0.jpg used on input line 204.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/gibbs_5000_0.jpg, id=29, 481.8pt x 481.8pt>
+File: images/gibbs_5000_0.jpg Graphic file (type jpg)
+
+<use images/gibbs_5000_0.jpg>
+Package pdftex.def Info: images/gibbs_5000_0.jpg used on input line 205.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/gibbs_5000_100.jpg, id=30, 481.8pt x 481.8pt>
+File: images/gibbs_5000_100.jpg Graphic file (type jpg)
+
+<use images/gibbs_5000_100.jpg>
+Package pdftex.def Info: images/gibbs_5000_100.jpg used on input line 206.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+
+<images/correlation.png, id=31, 661.47125pt x 292.09125pt>
+File: images/correlation.png Graphic file (type png)
+
+<use images/correlation.png>
+Package pdftex.def Info: images/correlation.png used on input line 212.
+(pdftex.def)             Requested size: 529.17772pt x 233.6733pt.
+
+Overfull \hbox (17.02809pt too wide) in paragraph at lines 212--213
+[][] 
+ []
+
+[5 <./images/metro_5000_100.jpg> <./images/metropolis_5000_0.jpg> <./images/met
+ropolis_0_100.jpg> <./images/gibbs_100_0.jpg> <./images/gibbs_5000_0.jpg> <./im
+ages/gibbs_5000_100.jpg> <./images/correlation.png>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 226.
+
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 200.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 226.
 
-Overfull \hbox (105.4368pt too wide) in paragraph at lines 208--209
+Overfull \hbox (105.4368pt too wide) in paragraph at lines 234--235
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (85.7266pt too wide) in paragraph at lines 209--210
+Overfull \hbox (85.7266pt too wide) in paragraph at lines 235--236
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (33.16605pt too wide) in paragraph at lines 242--243
+Overfull \hbox (33.16605pt too wide) in paragraph at lines 268--269
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[6] [7] (./main.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[6] [7] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6528 strings out of 492995
- 88191 string characters out of 6132704
- 194085 words of memory out of 5000000
- 9920 multiletter control sequences out of 15000+600000
+ 6527 strings out of 492995
+ 88180 string characters out of 6132704
+ 195038 words of memory out of 5000000
+ 9919 multiletter control sequences out of 15000+600000
  10607 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,11n,43p,1238b,1599s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (7 pages, 481965 bytes).
+ 40i,11n,43p,1251b,1597s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb>
+Output written on main.pdf (7 pages, 483020 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
